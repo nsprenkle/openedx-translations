@@ -199,10 +199,10 @@ jobs:
         run: sudo apt install -y gettext
 
       # Clones the  repository
-      - name: clone ${{ github.repository_owner }}/${{ matrix.repo }}
+      - name: clone openedx/${{ matrix.repo }}
         uses: actions/checkout@v3
         with:
-          repository: ${{ github.repository_owner }}/${{ matrix.repo }}
+          repository: openedx/${{ matrix.repo }}
           ref: ${{ github.event.inputs.ref }}
           path: translations/${{ matrix.repo }}
 
@@ -345,10 +345,10 @@ jobs:
           ref: ${{ needs.setup-branch.outputs.branch }}
 
       # Clones the  repository
-      - name: clone ${{ github.repository_owner }}/${{ matrix.repo }}
+      - name: clone openedx/${{ matrix.repo }}
         uses: actions/checkout@v3
         with:
-          repository: ${{ github.repository_owner }}/${{ matrix.repo }}
+          repository: openedx/${{ matrix.repo }}
           ref: ${{ github.event.inputs.ref }}
           path: translations/${{ matrix.repo }}
 
@@ -412,10 +412,10 @@ jobs:
           ref: ${{ needs.setup-branch.outputs.branch }}
 
       # Clones the  repository
-      - name: clone ${{ github.repository_owner }}/${{ matrix.repository_config.repo }}
+      - name: clone openedx/${{ matrix.repository_config.repo }}
         uses: actions/checkout@v3
         with:
-          repository: ${{ github.repository_owner }}/${{ matrix.repository_config.repo }}
+          repository: openedx/${{ matrix.repository_config.repo }}
           ref: ${{ github.event.inputs.ref || matrix.repository_config.ref }}
           path: translations/${{ matrix.repository_config.repo }}
 
